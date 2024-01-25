@@ -44,6 +44,7 @@ readOpcion(){
             echo "5"
             ;;
         6)
+            echo "Saliendo del menú"
             EXIT=1
         ;;
     esac
