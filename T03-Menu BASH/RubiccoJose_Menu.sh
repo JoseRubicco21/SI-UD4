@@ -26,11 +26,34 @@ readOpcion(){
         then
         echo "Opcion no valida"
     fi
+
+    case $OPT in
+        1)
+            echo "1"
+            ;;
+        2)
+            echo "2"
+            ;;
+        3)
+            echo "3"
+            ;;
+        4)
+            echo "4"
+            ;;
+        5)
+            echo "5"
+            ;;
+        6)
+            EXIT=1
+        ;;
+    esac
+
 }
 
 resetOpcion(){
     OPCION=-1
 }
+
 
 runMenu(){
     while(($EXIT != 1))
@@ -38,6 +61,7 @@ runMenu(){
     clearScreen
     displayMenu
     readOpcion
+    sleep 1
     done
 }
 
