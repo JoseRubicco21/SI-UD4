@@ -45,8 +45,8 @@ IS_INSTALLED=0
 
 installPong(){
     ## This has to be done in a System with graphical interface.
-    read -p "Introduzca la carpeta donde se quiere instalar Pong" INSTALL_DIRECTORY
-    read -p "Introduzca el usuario en el que quiere Instalar Pong" USER_DIR
+    read -p "Introduzca la carpeta donde se quiere instalar Pong " INSTALL_DIRECTORY
+    read -p "Introduzca el usuario en el que quiere Instalar Pong " USER_DIR
     mkdir -p /home/$USER_DIR/$INSTALL_DIRECTORY
     apt -y install default-jre
     apt -y install default-jdk
@@ -58,7 +58,8 @@ installPong(){
 }
 
 runPong(){
-    java -jar /home/$USER_DIR/$INSTALL_DIRECTORY/desktop/build/libs/desktop-1.0-jar
+    echo "/home/$1/$2/desktop/build/libs/desktop-1.0-jar"
+    java -jar /home/$1/$2/desktop/build/libs/desktop-1.0.jar
 }
 
 
@@ -92,12 +93,12 @@ readOpcion(){
             ;;
         3)
           ## Needs to be done in a system with graphical interface
-            if [[ $IS_INSTALLED -eq 0 ]];
+            if [ $IS_INSTALLED -eq 0 ];
             then
                 installPong
-                runPong
+                runPong $USER_DIR $INSTALL_DIRECTORY
             else
-                runPong
+                runPong $USER_DIR $INSTALL_DIRECTORY
             fi
             ;;
         4)
