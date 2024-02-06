@@ -1,3 +1,4 @@
+#!/usr/bin/python3.11
 import os, webbrowser, time, stat
 
 menu_state=-1
